@@ -1,0 +1,1962 @@
+/* ==========================================================================
+   About Page Styles - SmartCampus
+   ========================================================================== */
+
+.about-page-container {
+  width: 100%;
+  min-height: calc(100vh - 4.25rem);
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+/* ==========================================================================
+   About Hero Section
+   ========================================================================== */
+.about-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+  background-image: url("../../assets/home-hero.png");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Ambient dark gradient overlay for optimal text contrast */
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 17, 36, 0.98) 0%,
+    rgba(6, 17, 36, 0.92) 38%,
+    rgba(6, 17, 36, 0.6) 65%,
+    rgba(6, 17, 36, 0.22) 100%
+  );
+  z-index: 1;
+}
+
+.about-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Left Column: Heading, Subtitle, CTAs, Metrics */
+.about-hero-left {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  animation: aboutFadeIn 0.8s ease-out forwards;
+}
+
+/* Eyebrow Badge */
+.about-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+}
+
+/* Main Headline */
+.about-hero-headline {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 0 0 1.35rem 0;
+}
+
+.about-highlight {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 0 20px rgba(129, 140, 248, 0.4));
+}
+
+/* Description */
+.about-hero-desc {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin: 0 0 2.25rem 0;
+  max-width: 560px;
+}
+
+/* Action Buttons */
+.about-hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* Primary "Our Mission →" Button */
+.btn-about-mission {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.45);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-about-mission:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+  background: linear-gradient(135deg, #9333ea 0%, #4f46e5 100%);
+}
+
+/* Secondary "Watch Our Story" Button */
+.btn-watch-story {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.65rem;
+  background: rgba(15, 23, 42, 0.65);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-watch-story:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.story-play-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Stats Bar (Bottom Left)
+   ========================================================================== */
+.about-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.about-stat-icon-wrap {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-stat-item:hover .about-stat-icon-wrap {
+  transform: translateY(-2px);
+}
+
+.about-stat-icon-wrap.purple {
+  color: #c084fc;
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.2);
+}
+
+.about-stat-icon-wrap.indigo {
+  color: #818cf8;
+  box-shadow: 0 4px 12px rgba(129, 140, 248, 0.2);
+}
+
+.about-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-stat-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.about-stat-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   Right Column: Overlays (Handwritten Script & Building Badge)
+   ========================================================================== */
+.about-hero-right-overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rem;
+  pointer-events: none;
+}
+
+.handwritten-annotation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  color: #ffffff;
+  transform: rotate(-4deg);
+  animation: aboutFloatSubtle 6s ease-in-out infinite;
+}
+
+.handwritten-text {
+  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.02em;
+}
+
+.handwritten-arrow {
+  width: 50px;
+  height: 40px;
+  stroke: rgba(255, 255, 255, 0.85);
+  margin-top: 0.25rem;
+}
+
+.building-signage-badge {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.building-brand-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.building-brand-tagline {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0.25rem 0 0 0;
+}
+
+/* ==========================================================================
+   Who We Are & Purpose Section (Using about1sthero.png)
+   ========================================================================== */
+.about-story-section {
+  width: 100%;
+  padding: 3.5rem 0 5rem;
+  background: #f8fafc;
+}
+
+.about-story-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Row 1: Who We Are Card (2fr) + Our Purpose Card (1fr) */
+.about-story-top-row {
+  display: grid;
+  grid-template-columns: 2.15fr 1fr;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+/* Who We Are Card */
+.about-who-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.25rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+.about-who-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.08);
+  border-color: rgba(199, 210, 254, 0.7);
+}
+
+.about-who-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-story-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #7c3aed;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.about-who-title {
+  font-size: 2.25rem;
+  font-weight: 850;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.who-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-who-desc {
+  font-size: 0.925rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin-bottom: 1.85rem;
+}
+
+.btn-who-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.65rem;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-size: 0.885rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.btn-who-learn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.3);
+}
+
+/* Image Frame for about1sthero.png */
+.about-who-image-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px -8px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  height: 100%;
+  min-height: 250px;
+  max-height: 290px;
+}
+
+.about-who-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-who-card:hover .about-who-img {
+  transform: scale(1.03);
+}
+
+/* Right Card: Our Purpose */
+.about-purpose-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fbfaff 60%, #f5f3ff 100%);
+  border: 1px solid rgba(221, 214, 254, 0.7);
+  border-radius: 24px;
+  padding: 2.25rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.05);
+  transition: all 0.25s ease;
+}
+
+.about-purpose-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -8px rgba(124, 58, 237, 0.12);
+  border-color: rgba(168, 85, 247, 0.6);
+}
+
+.about-purpose-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.purpose-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #ede9fe;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+  flex-shrink: 0;
+}
+
+.purpose-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #6d28d9;
+  margin: 0;
+}
+
+.purpose-desc {
+  font-size: 0.885rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Purpose Quote Callout */
+.purpose-quote-box {
+  background: #ffffff;
+  border: 1px solid rgba(221, 214, 254, 0.8);
+  border-radius: 16px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.purpose-quote-mark {
+  color: #6366f1;
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: -3px;
+  flex-shrink: 0;
+}
+
+.purpose-quote-text {
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* Row 2: 3 Core Pillar Cards (Mission, Vision, Values) */
+.about-tri-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.about-tri-card {
+  border-radius: 22px;
+  padding: 1.85rem 1.85rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.03);
+  transition: all 0.25s ease;
+}
+
+.about-tri-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.08);
+}
+
+.about-tri-card.mission-card {
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+}
+
+.about-tri-card.vision-card {
+  background: #faf5ff;
+  border: 1px solid #f3e8ff;
+}
+
+.about-tri-card.values-card {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+}
+
+.tri-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tri-icon-box.blue {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.tri-icon-box.purple {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.tri-icon-box.teal {
+  background: #ccfbf1;
+  color: #0d9488;
+}
+
+.tri-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tri-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.45rem;
+}
+
+.tri-card-text {
+  font-size: 0.865rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Animations & Responsive Breakpoints
+   ========================================================================== */
+@keyframes aboutFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aboutFloatSubtle {
+  0%, 100% {
+    transform: rotate(-4deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-4deg) translateY(-8px);
+  }
+}
+
+@keyframes aboutPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(168, 85, 247, 0);
+  }
+}
+
+@keyframes aboutShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes aboutArrowWiggle {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+/* Hero Entrance Animations */
+.about-hero-left {
+  animation: aboutFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.about-hero-stats {
+  animation: aboutFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.about-stat-item {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+}
+
+.about-stat-item:hover {
+  transform: translateY(-3px);
+}
+
+.about-stat-item:hover .about-stat-icon-wrap {
+  transform: scale(1.1);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Floating Handwritten Callout */
+.handwritten-annotation {
+  animation: aboutFloatSubtle 4.5s ease-in-out infinite;
+}
+
+/* Who We Are & Purpose Cards Hover Lift */
+.about-who-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.about-who-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.about-who-img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-who-card:hover .about-who-img {
+  transform: scale(1.03);
+}
+
+.about-purpose-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.about-purpose-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.about-purpose-card:hover .purpose-icon-box {
+  transform: rotate(8deg) scale(1.08);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Three Core Pillar Cards Hover Lift & Icon Pop */
+.about-tri-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-tri-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
+.tri-icon-box {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.about-tri-card:hover .tri-icon-box {
+  transform: scale(1.12);
+}
+
+/* Impact Metric Frosted Cards Lift & Glow */
+.impact-metric-glass-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-metric-glass-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.impact-metric-icon-wrap {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.impact-metric-glass-card:hover .impact-metric-icon-wrap {
+  transform: scale(1.12);
+}
+
+/* What We Do Grid Items Smooth Hover Transition */
+.what-we-do-item {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.what-we-do-item:hover {
+  transform: translateX(4px);
+}
+
+.what-we-do-icon-wrap {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.what-we-do-item:hover .what-we-do-icon-wrap {
+  transform: scale(1.1) rotate(4deg);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.22);
+}
+
+/* Timeline Nodes Hover Effect */
+.journey-milestone-node {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-milestone-node:hover {
+  transform: translateY(-4px);
+}
+
+.journey-node-dot {
+  animation: aboutPulseGlow 3s infinite ease-in-out;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.journey-milestone-node:hover .journey-node-dot {
+  transform: scale(1.3);
+  background: #7c3aed;
+}
+
+.journey-milestone-icon {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.journey-milestone-node:hover .journey-milestone-icon {
+  transform: scale(1.15);
+}
+
+/* CTA Card Zoom Effect */
+.about-join-cta-card {
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.about-join-cta-card:hover {
+  box-shadow: 0 25px 55px rgba(2, 6, 23, 0.55);
+}
+
+.about-join-cta-card:hover .btn-join-primary svg {
+  animation: aboutArrowWiggle 1s ease infinite;
+}
+
+@media (max-width: 1200px) {
+  .about-story-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .about-tri-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .about-hero-headline {
+    font-size: 2.25rem;
+  }
+
+  .about-hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .about-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .about-who-card {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+  }
+
+  .about-who-image-wrap {
+    max-height: 240px;
+  }
+
+  .about-tri-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Rectangular Our Impact Banner Section (Using Our_Impact.png)
+   ========================================================================== */
+.about-impact-section {
+  width: 100%;
+  padding: 1rem 0 5rem;
+  background: #f8fafc;
+}
+
+.about-impact-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-impact-banner-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.4), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+}
+
+.about-impact-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  transition: transform 6s ease;
+}
+
+.about-impact-banner-card:hover .about-impact-bg {
+  transform: scale(1.06);
+}
+
+.about-impact-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 17, 36, 0.96) 0%,
+    rgba(6, 17, 36, 0.9) 35%,
+    rgba(6, 17, 36, 0.65) 60%,
+    rgba(6, 17, 36, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+.about-impact-content-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 3.5rem 3.5rem;
+  display: grid;
+  grid-template-columns: 1.15fr 1.6fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Left Column: Heading, Subtext, Button */
+.about-impact-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-impact-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.785rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #c084fc;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.impact-tag-dot {
+  font-size: 0.95rem;
+  color: #c084fc;
+}
+
+.about-impact-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.15rem;
+}
+
+.impact-title-highlight {
+  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.about-impact-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 440px;
+}
+
+.btn-impact-achievements {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 9999px;
+  font-size: 0.925rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+  width: fit-content;
+}
+
+.btn-impact-achievements:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+  color: #4338ca;
+}
+
+/* Right Column: 4 Frosted Glass Metric Cards */
+.about-impact-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.impact-metric-glass-card {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2.25rem 1rem 1.85rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.impact-metric-glass-card:hover {
+  transform: translateY(-5px);
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(129, 140, 248, 0.5);
+  box-shadow: 0 16px 35px rgba(99, 102, 241, 0.25);
+}
+
+.impact-metric-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s ease;
+}
+
+.impact-metric-glass-card:hover .impact-metric-icon-wrap {
+  transform: scale(1.08);
+}
+
+.impact-metric-icon-wrap.blue {
+  color: #60a5fa;
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.25);
+}
+
+.impact-metric-icon-wrap.cyan {
+  color: #38bdf8;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
+}
+
+.impact-metric-icon-wrap.sky {
+  color: #818cf8;
+  box-shadow: 0 4px 15px rgba(129, 140, 248, 0.25);
+}
+
+.impact-metric-icon-wrap.purple {
+  color: #c084fc;
+  box-shadow: 0 4px 15px rgba(192, 132, 252, 0.25);
+}
+
+.impact-metric-number {
+  font-size: 2rem;
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.impact-metric-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive Adaptations for Our Impact */
+@media (max-width: 1200px) {
+  .about-impact-content-wrap {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 2.5rem;
+  }
+
+  .about-impact-left {
+    max-width: 600px;
+  }
+
+  .about-impact-desc {
+    max-width: 100%;
+  }
+
+  .about-impact-metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-impact-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-impact-content-wrap {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .about-impact-title {
+    font-size: 1.85rem;
+  }
+
+  .about-impact-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-metric-glass-card {
+    padding: 1.75rem 1rem;
+  }
+}
+
+/* ==========================================================================
+   What We Do / Our Platform Section
+   ========================================================================== */
+.about-what-we-do-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 4.5rem 2rem 5.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.about-what-we-do-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Left Column */
+.what-we-do-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.what-we-do-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7c3aed;
+  margin-bottom: 0.75rem;
+}
+
+.what-we-do-tag-icon {
+  display: inline-flex;
+  font-size: 0.85rem;
+}
+
+.what-we-do-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #0b1528;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.what-we-do-title-highlight {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.what-we-do-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.65;
+  max-width: 320px;
+}
+
+/* Right Grid */
+.what-we-do-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem 1.5rem;
+}
+
+.what-we-do-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: 16px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.what-we-do-item:hover {
+  transform: translateY(-3px);
+  background: #f8fafc;
+}
+
+/* Icon Badges */
+.what-we-do-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.what-we-do-item:hover .what-we-do-icon-wrap {
+  transform: scale(1.08);
+}
+
+.what-we-do-icon-wrap.purple {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.what-we-do-icon-wrap.teal {
+  background: #ccfbf1;
+  color: #0d9488;
+}
+
+.what-we-do-icon-wrap.amber {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.what-we-do-icon-wrap.violet {
+  background: #ede9fe;
+  color: #6366f1;
+}
+
+.what-we-do-icon-wrap.sky {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.what-we-do-icon-wrap.magenta {
+  background: #fae8ff;
+  color: #c026d3;
+}
+
+/* Content */
+.what-we-do-item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.what-we-do-item-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+
+.what-we-do-item-desc {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.45;
+  font-weight: 450;
+}
+
+/* Responsive Adaptations for What We Do */
+@media (max-width: 1100px) {
+  .about-what-we-do-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .what-we-do-desc {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-what-we-do-section {
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  .what-we-do-title {
+    font-size: 2.2rem;
+  }
+
+  .what-we-do-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .what-we-do-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .what-we-do-item {
+    padding: 0.5rem 0;
+  }
+}
+
+/* ==========================================================================
+   Our Journey / Milestones & Growth Section
+   ========================================================================== */
+.about-journey-section {
+  width: 100%;
+  background: #f8fafc;
+  padding: 4.5rem 2rem 5.5rem;
+}
+
+.about-journey-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.about-journey-banner-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.06);
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  overflow: hidden;
+  min-height: 290px;
+}
+
+/* Left side visual container */
+.about-journey-visual-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  overflow: hidden;
+}
+
+.about-journey-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Gradient fade to seamlessly blend image into card content */
+.about-journey-img-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.75) 85%,
+    #ffffff 100%
+  );
+  pointer-events: none;
+}
+
+/* Right side content */
+.about-journey-content {
+  padding: 2.75rem 3rem 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-journey-header {
+  margin-bottom: 2.5rem;
+}
+
+.about-journey-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7c3aed;
+  margin-bottom: 0.6rem;
+}
+
+.about-journey-tag-icon {
+  display: inline-flex;
+  font-size: 0.85rem;
+}
+
+.about-journey-title {
+  font-size: 2.15rem;
+  font-weight: 900;
+  color: #0b1528;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.about-journey-title-highlight {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Timeline Layout */
+.about-journey-timeline {
+  position: relative;
+  width: 100%;
+}
+
+/* Continuous purple connecting line */
+.journey-track-line {
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: #c4b5fd;
+  z-index: 1;
+}
+
+.journey-milestones-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 2;
+  gap: 1rem;
+}
+
+.journey-milestone-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Small purple circle dot on the timeline track */
+.journey-node-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #7c3aed;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px #7c3aed;
+  margin-bottom: 1.25rem;
+}
+
+.journey-milestone-icon {
+  color: #7c3aed;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.journey-milestone-node:hover .journey-milestone-icon {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.journey-milestone-year {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.journey-milestone-desc {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+/* Responsive Breakpoints for Our Journey */
+@media (max-width: 1200px) {
+  .about-journey-banner-card {
+    grid-template-columns: 380px 1fr;
+  }
+
+  .about-journey-content {
+    padding: 2.25rem 2rem 2.25rem 1.5rem;
+  }
+
+  .about-journey-title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .about-journey-banner-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-journey-visual-wrap {
+    height: 220px;
+  }
+
+  .about-journey-img-fade {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.8) 80%,
+      #ffffff 100%
+    );
+  }
+
+  .about-journey-content {
+    padding: 1.5rem 1.75rem 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-journey-section {
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  .journey-track-line {
+    display: none;
+  }
+
+  .journey-milestones-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1rem;
+  }
+
+  .journey-node-dot {
+    margin-bottom: 0.75rem;
+  }
+
+  .about-journey-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ==========================================================================
+   Section 1: Let's Build a Smarter Campus Together (CTA Banner)
+   ========================================================================== */
+.about-join-cta-section {
+  position: relative;
+  background: #f8fafc;
+  padding: 3rem 2rem 3.5rem;
+}
+
+.about-join-cta-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.about-join-cta-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #030712;
+  box-shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+/* Background image using Our_Impact.png with twilight night blend */
+.about-join-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.42;
+  z-index: 1;
+}
+
+.about-join-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    95deg,
+    #030712 0%,
+    rgba(3, 7, 18, 0.94) 42%,
+    rgba(15, 23, 42, 0.75) 70%,
+    rgba(30, 27, 75, 0.5) 100%
+  );
+  z-index: 2;
+}
+
+.about-join-cta-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 2.75rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.about-join-cta-left {
+  max-width: 720px;
+}
+
+.about-join-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #a855f7;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.about-join-cta-badge .cta-badge-icon {
+  font-size: 0.85rem;
+}
+
+.about-join-cta-title {
+  color: #ffffff;
+  font-size: 2.35rem;
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.about-join-cta-title .cta-title-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-join-cta-desc {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Actions Right */
+.about-join-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.btn-join-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #3b82f6 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.85rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.42);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-join-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.6);
+  color: #ffffff;
+}
+
+.btn-join-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.btn-join-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Section 2: Clean SmartCampus Showcase Footer
+   ========================================================================== */
+.about-showcase-footer {
+  background: #ffffff;
+  color: #334155;
+  border-top: 1px solid #e2e8f0;
+  padding: 4rem 2rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.about-footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.about-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.35fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding-bottom: 3.5rem;
+}
+
+/* Brand Column */
+.about-footer-brand-col {
+  padding-right: 1rem;
+}
+
+.about-footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.about-footer-logo-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  background: linear-gradient(135deg, #a855f7 0%, #4f46e5 100%);
+  color: #ffffff;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.28);
+}
+
+.about-footer-logo-text {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.about-footer-logo-text .brand-bold {
+  color: #0f172a;
+}
+
+.about-footer-logo-text .brand-accent {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-footer-tagline {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.02em;
+  margin-left: 2px;
+}
+
+/* Links Columns */
+.about-footer-col-title {
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: #0f172a;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.about-footer-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.about-footer-link-list a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.about-footer-link-list a:hover {
+  color: #7c3aed;
+  transform: translateX(2px);
+}
+
+/* Connect With Us Column */
+.about-footer-connect-col {
+  padding-right: 0.5rem;
+}
+
+.about-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-footer-social-link {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: #0f172a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-footer-social-link:hover {
+  background: #7c3aed;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.about-footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.about-footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.contact-mail-text {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.contact-pin-icon {
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+/* Handwritten script column */
+.about-footer-script-col {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
+.about-footer-script-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transform: rotate(-5deg);
+  user-select: none;
+}
+
+.about-footer-handwritten-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Caveat", "Brush Script MT", "Segoe Script", "Comic Sans MS", cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.15;
+}
+
+.about-footer-curved-arrow {
+  margin-top: 0.35rem;
+  margin-right: 0.5rem;
+  transform: rotate(6deg);
+}
+
+/* Bottom Bar */
+.about-footer-bottom-bar {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about-footer-copyright {
+  font-size: 0.86rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.about-footer-bottom-tagline {
+  font-size: 0.86rem;
+  color: #475569;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive adjustments for CTA & Footer */
+@media (max-width: 1024px) {
+  .about-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .about-footer-script-col {
+    justify-content: flex-start;
+  }
+
+  .about-join-cta-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .about-join-cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.25rem 2rem;
+  }
+
+  .about-join-cta-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .about-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .about-join-cta-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .about-join-cta-title {
+    font-size: 1.65rem;
+  }
+
+  .about-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-showcase-footer {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .about-footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+
+

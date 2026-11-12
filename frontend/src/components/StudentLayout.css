@@ -1,0 +1,766 @@
+/* =========================================================
+   SMARTCAMPUS - STUDENT LAYOUT (FULL SCREEN & DYNAMIC RESPONSIVE)
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --student-sidebar-width: 260px;
+  --student-sidebar-collapsed-width: 74px;
+  --student-header-height: 70px;
+  --student-bg-primary: #f4f7fb;
+  --student-sidebar-bg: #0d1b2f;
+  --student-sidebar-card: #15243c;
+  --student-accent-blue: #087ff5;
+  --student-accent-glow: rgba(8, 127, 245, 0.25);
+  --student-border-subtle: #e5edf6;
+  --student-text-main: #14213d;
+  --student-text-muted: #6c7d93;
+}
+
+/* =========================================================
+   BASE LAYOUT CONTAINER
+   ========================================================= */
+
+.student-layout {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  background: var(--student-bg-primary);
+  color: var(--student-text-main);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fullscreen mode modifier */
+.student-layout.is-fullscreen {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* =========================================================
+   MOBILE BACKDROP OVERLAY
+   ========================================================= */
+
+.student-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 35, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  animation: studentFadeIn 0.25s ease-out;
+}
+
+@keyframes studentFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.student-sidebar {
+  width: var(--student-sidebar-width);
+  min-width: var(--student-sidebar-width);
+  height: 100vh;
+  background: linear-gradient(180deg, #0d1b2f 0%, #071220 100%);
+  color: #ffffff;
+  padding: 22px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition:
+    width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    min-width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.28s ease;
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08);
+}
+
+.student-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+.student-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+/* Sidebar Brand */
+.student-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 6px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.student-brand-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #183863 0%, #0f223d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.student-brand-icon:hover {
+  transform: scale(1.05);
+}
+
+.student-brand-text {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.student-brand-text strong {
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+  display: block;
+}
+
+.student-brand-text strong span {
+  color: #2ca2ff;
+}
+
+.student-brand-text small {
+  display: block;
+  margin-top: 2px;
+  color: #8c9eb5;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.student-collapse-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #9cb1cb;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.student-collapse-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* Sidebar Navigation Menu */
+.student-panel-label {
+  padding: 0 10px;
+  margin-bottom: 8px;
+  color: #556c88;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.student-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.student-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #c0cddf;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.student-nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.student-nav-link.active {
+  background: linear-gradient(90deg, #087ff5 0%, #1693fc 100%);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(8, 127, 245, 0.35);
+}
+
+.student-nav-icon {
+  width: 22px;
+  min-width: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.student-nav-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.student-sidebar-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 16px 6px;
+}
+
+.student-action-link {
+  font-family: inherit;
+  text-align: left;
+}
+
+.student-logout-link {
+  margin-top: 6px;
+  background: rgba(239, 41, 41, 0.12) !important;
+  color: #ff6b6b !important;
+  border: 1px solid rgba(239, 41, 41, 0.25);
+}
+
+.student-logout-link:hover {
+  background: #ef2929 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(239, 41, 41, 0.35);
+}
+
+/* Sidebar Footer Card */
+.student-sidebar-footer-card {
+  margin-top: auto;
+  padding: 16px 12px;
+  border-radius: 12px;
+  background: var(--student-sidebar-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  animation: studentFadeIn 0.3s ease;
+}
+
+.student-footer-building {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.student-sidebar-footer-card h3 {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  font-weight: 650;
+  color: #ffffff;
+}
+
+.student-sidebar-footer-card p {
+  margin: 0 auto 8px;
+  max-width: 170px;
+  color: #8fa0b5;
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.student-sidebar-footer-card span {
+  display: inline-block;
+  color: #4da6ff;
+  font-size: 8.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   SIDEBAR COLLAPSED STATE (DESKTOP)
+   ========================================================= */
+
+.student-layout.sidebar-collapsed .student-sidebar {
+  width: var(--student-sidebar-collapsed-width);
+  min-width: var(--student-sidebar-collapsed-width);
+  padding: 20px 8px 16px;
+}
+
+.student-layout.sidebar-collapsed .student-brand-text,
+.student-layout.sidebar-collapsed .student-panel-label,
+.student-layout.sidebar-collapsed .student-nav-label,
+.student-layout.sidebar-collapsed .student-sidebar-footer-card {
+  display: none !important;
+}
+
+.student-layout.sidebar-collapsed .student-brand {
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 22px;
+}
+
+.student-layout.sidebar-collapsed .student-collapse-btn {
+  display: none !important;
+}
+
+.student-layout.sidebar-collapsed .student-nav-link {
+  justify-content: center;
+  padding: 11px 0;
+  gap: 0;
+}
+
+.student-layout.sidebar-collapsed .student-nav-icon {
+  width: auto;
+  font-size: 18px;
+}
+
+/* =========================================================
+   WORKSPACE & TOP NAVBAR
+   ========================================================= */
+
+.student-workspace {
+  width: calc(100% - var(--student-sidebar-width));
+  margin-left: var(--student-sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition:
+    width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--student-bg-primary);
+}
+
+.student-layout.sidebar-collapsed .student-workspace {
+  width: calc(100% - var(--student-sidebar-collapsed-width));
+  margin-left: var(--student-sidebar-collapsed-width);
+}
+
+/* Top Navbar */
+.student-navbar {
+  height: var(--student-header-height);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--student-border-subtle);
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(16px, 2.5vw, 36px);
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.student-mobile-btn {
+  display: none;
+  border: 0;
+  background: #f0f4f9;
+  color: #172a44;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-desktop-collapse-btn {
+  border: 0;
+  background: #f1f5fa;
+  color: #3b4e6b;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.student-desktop-collapse-btn:hover {
+  background: #087ff5;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(8, 127, 245, 0.25);
+}
+
+.student-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-navbar-brand > span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: white;
+  background: linear-gradient(135deg, #087ff5 0%, #0056b3 100%);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(8, 127, 245, 0.3);
+}
+
+.student-navbar-brand strong {
+  color: #112544;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: block;
+}
+
+.student-navbar-brand small {
+  color: #7b8ea4;
+  font-size: 10px;
+  display: block;
+}
+
+.student-navbar-spacer {
+  flex: 1;
+}
+
+/* Status Badge */
+.student-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  background: #eafaf1;
+  border: 1px solid #c7f1d8;
+  border-radius: 20px;
+  color: #107e44;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.student-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.25);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(22, 163, 74, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+/* Fullscreen Button */
+.student-header-action-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: #f1f5fa;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #273952;
+  transition: all 0.2s ease;
+}
+
+.student-header-action-btn:hover {
+  background: #087ff5;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Profile Pill */
+.student-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px 4px 4px;
+  border-radius: 24px;
+  background: #f7fafc;
+  border: 1px solid #e7eff8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.student-user-profile:hover {
+  background: #eef4fc;
+  border-color: #d8e5f5;
+}
+
+.student-user-avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #087ff5 0%, #0056b3 100%);
+  border-radius: 50%;
+  font-size: 13.5px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(8, 127, 245, 0.28);
+}
+
+.student-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-user-details strong {
+  color: #14213d;
+  font-size: 12.5px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.student-user-details span {
+  color: #788a9f;
+  font-size: 10px;
+  margin-top: 1px;
+  text-transform: capitalize;
+}
+
+/* Quick Logout */
+.student-quick-logout-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(239, 41, 41, 0.1);
+  color: #ef4444;
+  font-size: 12.5px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.student-quick-logout-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 41, 41, 0.25);
+}
+
+/* =========================================================
+   PAGE CONTENT MAIN OUTLET (TRUE FULL SCREEN CANVAS)
+   ========================================================= */
+
+.student-content {
+  width: 100%;
+  max-width: 100%;
+  min-height: calc(100vh - var(--student-header-height));
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(
+      circle at 95% 5%,
+      rgba(8, 127, 245, 0.05),
+      transparent 35%
+    ),
+    var(--student-bg-primary);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   UNIVERSAL FULL SCREEN OVERRIDES FOR ALL STUDENT PAGES
+   ========================================================= */
+
+.student-dashboard,
+.student-profile,
+.student-attendance,
+.student-timetable,
+.student-subjects,
+.student-assignments,
+.student-results,
+.student-exams,
+.student-leave,
+.student-fees,
+.student-notices,
+.student-complaints,
+.student-placements,
+.student-notes {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: clamp(16px, 2vw, 32px) clamp(16px, 2.5vw, 38px) 40px !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   DYNAMIC SCREEN RESPONSIVENESS (EVERY SCREEN SIZE)
+   ========================================================= */
+
+/* Extra Large Screens / Ultrawide & 4K (1800px+) */
+@media (min-width: 1800px) {
+  :root {
+    --student-sidebar-width: 280px;
+  }
+
+  .student-navbar {
+    height: 76px;
+    padding: 0 42px;
+  }
+
+  .student-dashboard,
+  .student-profile,
+  .student-attendance,
+  .student-timetable,
+  .student-subjects,
+  .student-assignments,
+  .student-results,
+  .student-exams,
+  .student-leave,
+  .student-fees,
+  .student-notices,
+  .student-complaints,
+  .student-placements,
+  .student-notes {
+    padding: 36px 48px 50px !important;
+  }
+}
+
+/* Laptops & Standard Monitors (1024px - 1440px) */
+@media (max-width: 1200px) {
+  :root {
+    --student-sidebar-width: 240px;
+  }
+}
+
+/* Tablets & Small Laptops (900px - 1024px) */
+@media (max-width: 1024px) {
+  .student-status-badge {
+    display: none;
+  }
+}
+
+/* Tablets Portrait & Mobile (< 900px) */
+@media (max-width: 900px) {
+  .student-sidebar {
+    transform: translateX(-100%);
+    width: 270px !important;
+    min-width: 270px !important;
+    box-shadow: none;
+  }
+
+  .student-sidebar.mobile-open {
+    transform: translateX(0);
+    box-shadow: 12px 0 35px rgba(0, 0, 0, 0.35);
+  }
+
+  .student-workspace {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .student-mobile-btn {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .student-navbar {
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .student-user-details {
+    display: none;
+  }
+
+  .student-user-profile {
+    padding: 2px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+  }
+}
+
+/* Small Mobile Screens (< 600px) */
+@media (max-width: 600px) {
+  .student-navbar {
+    height: 62px;
+  }
+
+  .fullscreen-header-btn {
+    display: none;
+  }
+
+  .student-navbar-brand small {
+    display: none;
+  }
+
+  .student-quick-logout-btn {
+    display: none;
+  }
+
+  .student-dashboard,
+  .student-profile,
+  .student-attendance,
+  .student-timetable,
+  .student-subjects,
+  .student-assignments,
+  .student-results,
+  .student-exams,
+  .student-leave,
+  .student-fees,
+  .student-notices,
+  .student-complaints,
+  .student-placements,
+  .student-notes {
+    padding: 16px 12px 30px !important;
+  }
+}

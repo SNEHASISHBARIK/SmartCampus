@@ -1,0 +1,61 @@
+.student-notes-page { min-width:0; color:#18365e; font-family:Inter,"Segoe UI",Arial,sans-serif; }
+.student-notes-breadcrumb { display:flex; align-items:center; gap:7px; margin-bottom:8px; color:#8191a6; font-size:11px; }
+.student-notes-breadcrumb a { color:#3479ce; text-decoration:none; }
+.student-notes-breadcrumb strong { color:#354d69; }
+.student-notes-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:13px; }
+.student-notes-heading h1 { margin:0; color:#172f52; font-size:25px; font-weight:800; }
+.student-notes-heading p { margin:4px 0 0; color:#7d8da2; font-size:12px; }
+.student-notes-semester { padding:7px 10px; border:1px solid #d9e9fb; border-radius:7px; background:#eff7ff; color:#2873ca; font-size:10px; font-weight:700; white-space:nowrap; }
+.student-notes-summary { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-bottom:11px; }
+.student-notes-summary-card { display:flex; min-width:0; min-height:68px; align-items:center; gap:10px; padding:10px; border:1px solid #e5ecf4; border-radius:9px; background:#fff; }
+.student-notes-summary-icon { display:grid; width:38px; height:40px; flex:0 0 38px; place-items:center; border-radius:8px; font-size:18px; }
+.student-notes-summary-icon.blue { color:#3779cf; background:#e9f2ff; }
+.student-notes-summary-icon.purple { color:#8651ce; background:#f0eaff; }
+.student-notes-summary-card > div { display:flex; min-width:0; flex-direction:column; gap:3px; }
+.student-notes-summary-card > div > span { color:#77889e; font-size:9px; }
+.student-notes-summary-card strong { color:#203a5c; font-size:20px; line-height:1; }
+.student-notes-panel { overflow:hidden; border:1px solid #e5ecf4; border-radius:9px; background:#fff; box-shadow:0 2px 8px rgba(31,62,102,.03); }
+.student-notes-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 12px; border-bottom:1px solid #e8edf4; }
+.student-notes-toolbar h2 { margin:0; color:#2d4969; font-size:12px; font-weight:750; }
+.student-notes-toolbar p { margin:4px 0 0; color:#8291a5; font-size:9px; }
+.student-notes-filters { display:flex; align-items:center; gap:7px; }
+.student-notes-select select { min-height:32px; max-width:210px; padding:0 8px; border:1px solid #e1e8f0; border-radius:6px; background:#fff; color:#526b87; font:inherit; font-size:9px; }
+.student-notes-search { display:flex; width:180px; min-height:30px; align-items:center; gap:6px; padding:0 8px; border:1px solid #e1e8f0; border-radius:6px; color:#8292a5; }
+.student-notes-search svg { flex:0 0 auto; font-size:13px; }
+.student-notes-search input { width:100%; min-width:0; border:0; outline:0; background:transparent; color:#344e6c; font:inherit; font-size:9px; }
+.student-notes-search input::placeholder { color:#9ba8b7; }
+.student-notes-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:11px; }
+.student-note-card { display:flex; min-width:0; flex-direction:column; padding:12px; border:1px solid #e7edf4; border-radius:8px; background:#fff; transition:border-color .16s ease,box-shadow .16s ease; }
+.student-note-card:hover { border-color:#cddff3; box-shadow:0 4px 13px rgba(35,73,116,.07); }
+.student-note-card-heading { display:flex; align-items:center; gap:8px; }
+.student-note-file-icon { display:grid; width:34px; height:34px; place-items:center; border-radius:7px; background:#e9f2ff; color:#3779cf; font-size:16px; }
+.student-note-subject { overflow:hidden; color:#6080a1; font-size:8px; font-weight:750; text-overflow:ellipsis; white-space:nowrap; }
+.student-note-card h3 { overflow:hidden; margin:10px 0 4px; color:#2a4565; font-size:11px; font-weight:750; text-overflow:ellipsis; white-space:nowrap; }
+.student-note-subject-name { margin:0; color:#71839a; font-size:9px; }
+.student-note-description { display:-webkit-box; overflow:hidden; min-height:30px; margin:8px 0 12px; color:#75869b; font-size:9px; line-height:1.55; -webkit-box-orient:vertical; -webkit-line-clamp:2; }
+.student-note-card-footer { display:flex; align-items:center; justify-content:space-between; gap:7px; margin-top:auto; padding-top:10px; border-top:1px solid #edf1f5; }
+.student-note-card-footer time { color:#8291a5; font-size:8px; }
+.student-note-open { display:inline-flex; min-height:27px; align-items:center; gap:5px; padding:0 8px; border:1px solid #d7e8fa; border-radius:5px; background:#f5f9ff; color:#2873ca; font-size:8px; font-weight:700; text-decoration:none; white-space:nowrap; }
+.student-note-open:hover { background:#eaf3ff; }
+.student-note-unavailable { color:#a16f72; font-size:8px; }
+.student-notes-state { display:flex; min-height:190px; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:18px; color:#7c8da2; text-align:center; font-size:10px; }
+.student-notes-state > svg { color:#3780d8; font-size:23px; }
+.student-notes-state strong { color:#2d4969; font-size:12px; }
+.student-notes-state button { display:inline-flex; align-items:center; gap:5px; padding:7px 10px; border:1px solid #d5e4f5; border-radius:6px; background:#fff; color:#2874cb; font:inherit; font-size:9px; cursor:pointer; }
+.student-notes-state.error > svg { color:#bd4050; }
+.student-notes-footer { display:flex; align-items:center; gap:8px; margin-top:10px; padding:12px 14px; border-radius:8px; background:linear-gradient(100deg,#dcecff,#f0f7ff); color:#3677bd; font-size:10px; }
+.student-notes-footer > svg { font-size:17px; }
+.student-notes-footer em { margin-left:auto; color:#77879a; font-size:9px; }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; clip-path:inset(50%); }
+@media (max-width:1000px) { .student-notes-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:680px) {
+  .student-notes-heading { align-items:flex-start; flex-direction:column; }
+  .student-notes-toolbar { align-items:stretch; flex-direction:column; }
+  .student-notes-filters { align-items:stretch; flex-direction:column; }
+  .student-notes-select select,.student-notes-search { width:100%; max-width:none; box-sizing:border-box; min-height:34px; }
+  .student-notes-grid { grid-template-columns:minmax(0,1fr); padding:8px; }
+  .student-note-description { min-height:0; }
+  .student-notes-footer { align-items:flex-start; flex-wrap:wrap; }
+  .student-notes-footer em { width:100%; margin-left:25px; }
+}
+@media (max-width:400px) { .student-notes-summary { grid-template-columns:minmax(0,1fr); } }

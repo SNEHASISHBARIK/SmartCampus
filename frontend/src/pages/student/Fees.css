@@ -1,0 +1,87 @@
+.student-fees-page {
+  min-width: 0;
+  color: #18365e;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+.student-fees-breadcrumb { display:flex; align-items:center; gap:7px; margin-bottom:8px; color:#8191a6; font-size:11px; }
+.student-fees-breadcrumb a { color:#3479ce; text-decoration:none; }
+.student-fees-breadcrumb strong { color:#354d69; }
+.student-fees-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:13px; }
+.student-fees-heading h1 { margin:0; color:#172f52; font-size:25px; font-weight:800; }
+.student-fees-heading p { margin:4px 0 0; color:#7d8da2; font-size:12px; }
+.student-fees-pay-button { display:inline-flex; min-height:38px; align-items:center; justify-content:center; gap:7px; padding:0 13px; border:0; border-radius:7px; background:#2878eb; color:#fff; font:inherit; font-size:11px; font-weight:700; cursor:pointer; }
+.student-fees-pay-button:disabled { opacity:.5; cursor:not-allowed; }
+.student-fees-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:9px; margin-bottom:11px; }
+.student-fees-stat-card { display:flex; min-width:0; min-height:68px; align-items:center; gap:10px; padding:10px; border:1px solid #e5ecf4; border-radius:9px; background:#fff; }
+.student-fees-stat-icon { display:grid; width:38px; height:40px; flex:0 0 38px; place-items:center; border-radius:8px; font-size:18px; }
+.student-fees-stat-icon.blue { color:#2878eb; background:#e8f2ff; }
+.student-fees-stat-icon.green { color:#13a46c; background:#e3f8ee; }
+.student-fees-stat-icon.red { color:#df5261; background:#ffebee; }
+.student-fees-stat-icon.purple { color:#8755d0; background:#f0eaff; }
+.student-fees-stat-card > div { display:flex; min-width:0; flex-direction:column; gap:3px; }
+.student-fees-stat-card > div > span { color:#77889e; font-size:9px; }
+.student-fees-stat-card strong { overflow:hidden; color:#203a5c; font-size:18px; line-height:1.15; text-overflow:ellipsis; white-space:nowrap; }
+.student-fees-alert { display:flex; align-items:center; gap:7px; margin-bottom:10px; padding:9px 11px; border-radius:7px; background:#fff0f0; color:#ad3946; font-size:10px; }
+.student-fees-alert span { flex:1; }
+.student-fees-alert button { display:inline-flex; align-items:center; gap:4px; border:0; background:transparent; color:inherit; font:inherit; font-weight:700; cursor:pointer; }
+.student-fees-panel { overflow:hidden; border:1px solid #e5ecf4; border-radius:9px; background:#fff; box-shadow:0 2px 8px rgba(31,62,102,.03); }
+.student-fees-tabs { display:flex; gap:10px; padding:0 10px; border-bottom:1px solid #e8edf4; }
+.student-fees-tabs button { display:inline-flex; min-height:42px; align-items:center; gap:7px; padding:0 8px; border:0; border-bottom:2px solid transparent; background:transparent; color:#71839a; font:inherit; font-size:10px; font-weight:650; cursor:pointer; }
+.student-fees-tabs button.active { border-color:#2878eb; color:#2878d6; }
+.student-fees-tabs button span { display:grid; min-width:17px; height:17px; place-items:center; border-radius:50%; background:#eef4fb; color:#59728f; font-size:8px; }
+.student-fees-table-wrap { overflow-x:auto; padding:8px; }
+.student-fees-table { width:100%; border-collapse:collapse; text-align:left; white-space:nowrap; }
+.student-fees-table th { padding:9px 8px; background:#f4f7fb; color:#536b87; font-size:9px; font-weight:750; }
+.student-fees-table td { padding:10px 8px; border-bottom:1px solid #edf1f5; color:#4c6380; font-size:9px; }
+.student-fees-table td:nth-child(2) strong,.student-fees-table td:nth-child(2) small { display:block; }
+.student-fees-table td:nth-child(2) strong { color:#344f70; font-size:9px; }
+.student-fees-table td:nth-child(2) small { margin-top:3px; color:#8291a5; font-size:8px; }
+.student-fee-status { display:inline-flex; min-width:52px; justify-content:center; padding:5px 8px; border-radius:5px; font-size:8px; font-weight:750; text-transform:capitalize; }
+.student-fee-status.pending { background:#fff4d9; color:#a36b11; }
+.student-fee-status.partial { background:#e8f2ff; color:#246eb0; }
+.student-fee-status.paid { background:#e1f7eb; color:#168052; }
+.student-fee-status.overdue { background:#ffeaed; color:#b63d4b; }
+.student-fee-row-pay,.student-fee-row-receipt { min-height:27px; padding:0 9px; border:0; border-radius:5px; font:inherit; font-size:9px; font-weight:700; cursor:pointer; }
+.student-fee-row-pay { background:#2878eb; color:#fff; }
+.student-fee-row-receipt { background:#edf5ff; color:#2873ca; }
+.student-fees-receipts { display:grid; gap:8px; padding:10px; }
+.student-fees-receipts article { display:flex; align-items:center; gap:9px; padding:10px; border:1px solid #e9eef5; border-radius:7px; }
+.receipt-icon { display:grid; width:32px; height:32px; flex:0 0 32px; place-items:center; border-radius:7px; background:#e8f2ff; color:#2878eb; }
+.student-fees-receipts article > div { display:flex; min-width:0; flex:1; flex-direction:column; gap:3px; }
+.student-fees-receipts article strong { color:#344f70; font-size:10px; }
+.student-fees-receipts article small { overflow:hidden; color:#8291a5; font-size:8px; text-overflow:ellipsis; white-space:nowrap; }
+.student-fees-receipts article b { color:#203a5c; font-size:10px; }
+.student-fees-receipts article button { display:inline-flex; align-items:center; gap:5px; padding:6px 8px; border:1px solid #d5e7fa; border-radius:5px; background:#f2f8ff; color:#2873ca; font:inherit; font-size:8px; font-weight:700; cursor:pointer; }
+.student-fees-disclaimer { margin:0; color:#8492a4; font-size:8px; line-height:1.5; }
+.student-fees-state { display:flex; min-height:180px; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:18px; color:#7c8da2; text-align:center; font-size:10px; }
+.student-fees-state > svg { color:#3780d8; font-size:23px; }
+.student-fees-state strong { color:#2d4969; font-size:12px; }
+.student-fees-state button { display:inline-flex; align-items:center; gap:5px; padding:7px 10px; border:1px solid #d5e4f5; border-radius:6px; background:#fff; color:#2874cb; font:inherit; font-size:9px; cursor:pointer; }
+.student-fees-state.error > svg { color:#bd4050; }
+.student-fees-footer { display:flex; align-items:center; gap:8px; margin-top:10px; padding:12px 14px; border-radius:8px; background:linear-gradient(100deg,#dcecff,#f0f7ff); color:#3677bd; font-size:10px; }
+.student-fees-footer > svg { font-size:17px; }
+.student-fees-footer em { margin-left:auto; color:#77879a; font-size:9px; }
+.student-fees-modal-backdrop { position:fixed; z-index:1000; inset:0; display:grid; place-items:center; padding:16px; background:rgba(18,38,63,.48); }
+.student-fees-modal { width:min(480px,100%); max-height:90vh; overflow:auto; padding-bottom:14px; border:1px solid #e3eaf3; border-radius:12px; background:#fff; box-shadow:0 18px 60px rgba(20,45,76,.2); }
+.student-fees-modal > header { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 16px; border-bottom:1px solid #edf1f6; }
+.student-fees-modal > header span { color:#7d8da2; font-size:9px; }
+.student-fees-modal > header h2 { margin:3px 0 0; color:#243e5f; font-size:15px; }
+.student-fees-modal > header button { display:grid; width:30px; height:30px; place-items:center; border:0; border-radius:6px; background:#f1f5fa; color:#647992; cursor:pointer; }
+.student-fees-modal > p { margin:13px 16px; color:#657b95; font-size:10px; line-height:1.6; }
+.student-fees-modal-close { display:block; margin:12px 16px 0 auto; min-height:31px; padding:0 12px; border:0; border-radius:6px; background:#2878eb; color:#fff; font:inherit; font-size:10px; font-weight:700; cursor:pointer; }
+.student-fees-detail-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; padding:14px 16px; }
+.student-fees-detail-list > div { padding:9px; border-radius:6px; background:#f6f9fc; }
+.student-fees-detail-list dt { color:#8291a5; font-size:9px; }
+.student-fees-detail-list dd { overflow-wrap:anywhere; margin:5px 0 0; color:#344e6c; font-size:10px; font-weight:650; }
+
+@media (max-width:900px) { .student-fees-stats { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:560px) {
+  .student-fees-heading { align-items:flex-start; flex-direction:column; }
+  .student-fees-pay-button { width:100%; }
+  .student-fees-stats { grid-template-columns:minmax(0,1fr); }
+  .student-fees-receipts article { flex-wrap:wrap; }
+  .student-fees-receipts article > div { min-width:calc(100% - 50px); }
+  .student-fees-detail-list { grid-template-columns:minmax(0,1fr); }
+  .student-fees-footer { align-items:flex-start; flex-wrap:wrap; }
+  .student-fees-footer em { width:100%; margin-left:25px; }
+}
