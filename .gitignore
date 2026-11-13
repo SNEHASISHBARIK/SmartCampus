@@ -142,3 +142,9 @@ dump.rdb
 .gemini/
 .gsd/
 model_capabilities.yaml
+
+# 11. Local GSD files and root support directories
+/GSD-STYLE.md
+/PROJECT_RULES.md
+/scripts/
+/adapters/
