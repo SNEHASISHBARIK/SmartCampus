@@ -334,10 +334,11 @@ Rules:
 )
 def generate_placement_questions(request: PlacementQuestionRequest):
     if client is None:
-        raise HTTPException(
-            status_code=503,
-            detail="AI service is not configured. Check GEMINI_API_KEY.",
+        print(
+            "[Placement AI] GEMINI_API_KEY is not configured; using the built-in question bank.",
+            flush=True,
         )
+        return generate_fallback_placement_questions(request)
 
     prompt = f"""
 You are an expert placement-test question setter for SmartCampus.
