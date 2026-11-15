@@ -11,7 +11,7 @@ import {
   FiUsers,
   FiX,
 } from "react-icons/fi";
-import api from "../../services/api";
+import api, { resolveApiAssetUrl } from "../../services/api";
 import "./Notices.css";
 
 const CATEGORIES = [
@@ -60,9 +60,7 @@ const noticeIcon = (category) => {
 };
 
 const attachmentHref = (url) => {
-  if (!url) return "";
-  if (/^https?:\/\//i.test(url)) return url;
-  return `http://localhost:5000/${url.replace(/^\/+/, "")}`;
+  return resolveApiAssetUrl(url);
 };
 
 const Notices = () => {

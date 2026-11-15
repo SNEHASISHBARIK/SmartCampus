@@ -19,7 +19,7 @@ import {
   FiUsers,
   FiX,
 } from "react-icons/fi";
-import api from "../../services/api";
+import api, { resolveApiAssetUrl } from "../../services/api";
 import "./Subjects.css";
 
 const SUBJECT_ICONS = [FiCode, FiDatabase, FiLayers, FiBriefcase, FiBookOpen, FiUsers];
@@ -40,9 +40,7 @@ const facultyNames = (faculty = []) =>
     .filter(Boolean);
 
 const resourceUrl = (fileUrl) => {
-  if (!fileUrl) return "";
-  if (/^https?:\/\//i.test(fileUrl)) return fileUrl;
-  return `http://localhost:5000/${fileUrl.replace(/^\/+/, "")}`;
+  return resolveApiAssetUrl(fileUrl);
 };
 
 const formatDate = (date) => {

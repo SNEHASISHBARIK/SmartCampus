@@ -5,6 +5,11 @@ const Student = require("../models/Student");
 const Placement = require("../models/Placement");
 
 async function autoSeedEssentialData() {
+  if (process.env.SEED_DEMO_DATA !== "true") {
+    console.log("Demo data seeding is disabled.");
+    return;
+  }
+
   try {
     let dept = await Department.findOne({ code: "CSE" });
     if (!dept) {

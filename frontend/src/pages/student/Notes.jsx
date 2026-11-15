@@ -8,13 +8,11 @@ import {
   FiRefreshCw,
   FiSearch,
 } from "react-icons/fi";
-import api from "../../services/api";
+import api, { resolveApiAssetUrl } from "../../services/api";
 import "./Notes.css";
 
 const resourceUrl = (fileUrl) => {
-  if (!fileUrl) return "";
-  if (/^https?:\/\//i.test(fileUrl)) return fileUrl;
-  return `http://localhost:5000/${fileUrl.replace(/^\/+/, "")}`;
+  return resolveApiAssetUrl(fileUrl);
 };
 
 const formatDate = (value) => {

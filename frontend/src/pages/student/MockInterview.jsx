@@ -215,7 +215,12 @@ export default function MockInterview() {
     }, 1500);
 
     try {
-      const response = await fetch("http://127.0.0.1:8002/tts", {
+      const ttsUrl = (
+        import.meta.env.VITE_TTS_URL ||
+        (import.meta.env.DEV ? "http://127.0.0.1:8002" : "")
+      ).replace(/\/+$/, "");
+      if (!ttsUrl) throw new Error("Speech service is not configured.");
+      const response = await fetch(`${ttsUrl}/tts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
